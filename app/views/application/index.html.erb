@@ -1,0 +1,7 @@
+<h2>create account</h2>
+<%= form_tag :action => 'create_account' do %>
+    <% @user.errors.each do |key, error| %>
+        <%= key %>, <%= error %>
+    <% end %>
+    <%= text_field_tag(:name) %>
+<% end %>
