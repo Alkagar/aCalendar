@@ -1,0 +1,16 @@
+<h2>create new user - form</h2>
+
+<%= form_for @user do |f| %>
+    <%= f.error_messages %>
+    <br /> ==
+    <%= f.text_field :name %>
+    <br /> ==
+    <%= f.text_field :login %>
+    <br /> ==
+    <%= f.password_field :password %>
+    <br /> ==
+    <%= f.password_field :password_confirmation %>
+    <br /> ==
+    <%= f.text_field :email %>
+    <%= f.submit %>
+<% end %>

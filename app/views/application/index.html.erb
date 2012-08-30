@@ -1,7 +1,7 @@
-<h2>create account</h2>
-<%= form_tag :action => 'create_account' do %>
-    <% @user.errors.each do |key, error| %>
-        <%= key %>, <%= error %>
-    <% end %>
-    <%= text_field_tag(:name) %>
-<% end %>
+<h2>hello ruby dude!</h2>
+You can 
+<%= link_to 'login', url_for(:action => 'login', :controller => 'users') %> 
+, 
+<%= link_to 'create', :new_user %> 
+account or read 
+<%= link_to 'help', url_for(:action => 'help', :controller => 'application') %> 
