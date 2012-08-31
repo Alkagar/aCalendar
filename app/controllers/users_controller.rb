@@ -10,8 +10,10 @@ class UsersController < ApplicationController
 
   # here add user to db
   def create
-      @user = User.create params[:user]
-      @user.save
+      @user = User.new params[:user]
+      if @user.valid?
+          redirect_to({:action => 'login'}) if @user.save
+      end
   end
 
   def logout
