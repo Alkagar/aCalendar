@@ -1,10 +1,18 @@
 <%= form_for @user do |f| %>
     <div><%= f.error_messages %></div>
+    <div><%= f.label :name %></div>
     <div><%= f.text_field :name %></div>
+    <div><%= f.label :login %></div>
     <div><%= f.text_field :login %></div>
+    <div><%= f.label :password %></div>
     <div><%= f.password_field :password %></div>
+    <div><%= f.label :password_confirmation %></div>
     <div><%= f.password_field :password_confirmation %></div>
+    <div><%= f.label :email %></div>
     <div><%= f.text_field :email %></div>
-    <div><%= f.check_box :autologin %></div>
+    <div>
+        <%= f.label :autologin %>
+        <%= f.check_box :autologin %>
+    </div>
     <div><%= f.submit %></div>
 <% end %>

@@ -2,4 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+    hello: "Hello world"
+    general_home: "home"
+    general_login: 'login'
+    general_create: 'create'
+    general_help: 'help'
+    general_logout: 'logout'
+    general_en: 'en'
+    general_pl: 'pl'
+
+pl: 
+    general_home: 'główna'
+    general_login: 'login'
+    general_create: 'załóż konto'
+    general_help: 'pomoc'
+    general_logout: 'wyloguj'
+    general_en: 'ang'
+    general_pl: 'pol'
+

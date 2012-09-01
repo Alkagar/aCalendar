@@ -1,1 +1,11 @@
 <h2>login</h2>
+<% #render 'layouts/flash', :locals => {:flash => flash} %>
+
+<% if flash[:notice] %>
+    <div class='notice'> <%= flash[:notice] %> </div>
+<% end %>
+<% if flash[:error] %>
+    <div class='error'> <%= flash[:error] %> </div>
+<% end %>
+
+<%= render 'form_login' %>

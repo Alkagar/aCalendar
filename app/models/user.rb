@@ -1,27 +1,27 @@
 class User < ActiveRecord::Base
     attr_accessible :email, :login, :name, :password, :password_confirmation, :autologin
 
-    validates :name, :password, :email, :presence => true
-    validates :name, :length => { :in => 5..40 }
-    validates :login, :length => { :in => 5..40 }
-    validates :password, :length => { :in => 8..40 }, :confirmation => true
+    validates :name, :length => { :in => 5..40 }, :presence => true
+
+    validates :login, :length => { :in => 5..40 }, :presence => true
+
+    validates :password, :length => { :in => 8..40 }, :presence => true
+    validates :password, :confirmation => true
     validates :password_confirmation, :presence => true
-    validates :email, :uniqueness => true
-    validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+    validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, :uniqueness => true, :presence => true
+
 
     def self.encrypt(password)
         Digest::SHA1.hexdigest(password)
     end
 
-    def hashed_password=(password)
-        self.password = User.encrypt(password)
-    end
-
     def self.authenticate(login, password)
-        user = find(:first, :conditions=>["login = ?", login])
-        return nil if user.nil?
-        return user if User.encrypt(password) == user.password
-        nil
+        user = User.where(:login => login, :password => password)
+        if user.nil? 
+            return user
+        else
+            return user.first
+        end
     end
 end
-
