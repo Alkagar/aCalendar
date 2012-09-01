@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
     def login
         if !session[:current_user].nil?
             redirect_to(root_path)
@@ -7,7 +6,7 @@ class UsersController < ApplicationController
         if request.post?
             @user = User.authenticate(params[:user][:login], params[:user][:password])
             if @user.nil?
-                flash.now[:error] = 'You need to log in!'
+                flash.now[:error] = t(:general_form_wrong_login)
             else
                 session[:current_user] = @user
                 redirect_to(root_path)
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new params[:user]
         if @user.valid? :on => :create
-            flash[:notice] = 'Account created, now you can login using your password.'
+            flash[:notice] = t(:general_flash_account_created)
             redirect_to(login_users_path) if @user.save
         end
     end

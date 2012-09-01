@@ -11,6 +11,10 @@ en:
     general_en: 'en'
     general_pl: 'pl'
 
+    general_form_wrong_login: 'Sorry, wrong username or password.'
+
+    general_flash_account_created: 'Account created, now you can login using your password.'
+
 pl: 
     general_home: 'główna'
     general_login: 'login'
