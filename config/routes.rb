@@ -11,6 +11,10 @@ ACalendar::Application.routes.draw do
                 match 'logout'
             end
         end
+        resources :tasks do
+            collection do
+            end
+        end
     end
 
     root :to => 'application#index'

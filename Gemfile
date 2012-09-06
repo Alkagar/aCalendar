@@ -21,6 +21,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+group :assets do
+      gem 'jquery-ui-rails'
+end
 
 gem "dynamic_form"
 

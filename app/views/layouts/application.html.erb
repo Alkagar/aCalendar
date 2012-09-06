@@ -8,18 +8,21 @@
 </head>
 <body>
     <div>
-        <%= link_to t(:general_home), root_path %>,
+        <%= link_to t(:menu_home), root_path %>,
         <% if session[:current_user].nil? %>
-            <%= link_to t(:general_login), login_users_path %>, 
-            <%= link_to t(:general_create), new_user_path %>,
+            <%= link_to t(:menu_login), login_users_path %>, 
+            <%= link_to t(:menu_create), new_user_path %>,
         <% else %>
-            <%= link_to "#{session[:current_user].name} (#{t(:general_logout)})", logout_users_path %>,
+            <%= link_to "#{session[:current_user].name} (#{t(:menu_logout)})", logout_users_path %>,
+            <%= link_to t(:menu_task_list), tasks_path %>,
+            <%= link_to t(:menu_task_new), new_task_path %>,
         <% end %>
-        <%= link_to t(:general_help), help_path %>,
-        (<%= link_to t(:general_en), root_path(:locale => 'en') %>,
-        <%= link_to t(:general_pl), root_path(:locale => 'pl') %>)
+        <%= link_to t(:menu_help), help_path %>,
+        (<%= link_to t(:menu_en), root_path(:locale => 'en') %>,
+        <%= link_to t(:menu_pl), root_path(:locale => 'pl') %>)
     </div>
 <%= yield %>
+<hr />
 <div>
     <%= params.inspect %>
 </div>

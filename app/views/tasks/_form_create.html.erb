@@ -1,0 +1,17 @@
+<%= form_for @task do |f| %>
+    <div><%= f.error_messages %></div>
+
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name %></div>
+
+    <div><%= f.label :begin %></div>
+    <div><%= f.text_field :begin, :class => 'datetime' %></div>
+
+    <div><%= f.label :end %></div>
+    <div><%= f.text_field :end, :class => 'datetime' %></div>
+
+    <div><%= f.label :description %></div>
+    <div><%= f.text_area :description %></div>
+
+    <div><%= f.submit %></div>
+<% end %>

@@ -3,17 +3,28 @@
 
 en:
     hello: "Hello world"
-    general_home: "home"
-    general_login: 'login'
-    general_create: 'create'
-    general_help: 'help'
-    general_logout: 'logout'
-    general_en: 'en'
-    general_pl: 'pl'
+    menu_home: "home"
+    menu_login: 'login'
+    menu_create: 'create'
+    menu_help: 'help'
+    menu_logout: 'logout'
+    menu_en: 'en'
+    menu_pl: 'pl'
+    menu_task_list: 'tasks'
+    menu_task_new: 'new task'
+
+    titles_task_list: "Task list"
+    titles_task_new: "New task"
+
+
+
 
     general_form_wrong_login: 'Sorry, wrong username or password.'
 
     general_flash_account_created: 'Account created, now you can login using your password.'
+    general_flash_status_ok: 'Operation completed successfully.'
+
+
 
 pl: 
     general_home: 'główna'

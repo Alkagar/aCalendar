@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require_tree .
+//
+
+$(document).ready(function() {
+    $('.datetime').datetimepicker({ dateFormat: "yy-mm-dd" });
+});
+

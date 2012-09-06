@@ -1,0 +1,10 @@
+<h2><%= t(:titles_task_list) %> </h2>
+<% @tasks.each do |task| %>
+    <div>
+        <%= task.name %>
+    </div>
+    <div>
+        <%= "begin at: #{task.begin}, end at: #{task.end}" %>
+    </div>
+    <hr />
+<% end %>
