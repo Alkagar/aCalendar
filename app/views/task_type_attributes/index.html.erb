@@ -1,0 +1,14 @@
+<h2><%= t(:titles_task_type_attributes_list) %> </h2>
+<% @task_type_attributes.each do |task_type_attribute| %>
+    <div>
+        <div>
+            <%= task_type_attribute.name %>
+        </div>
+        <div class='font60p'>
+            <%= task_type_attribute.description %>
+        </div>
+        <div class='font60p'>
+            <%= "#{t(:default_value)}: #{task_type_attribute.default}" %>
+        </div>
+    </div>
+<% end %>

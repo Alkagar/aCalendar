@@ -15,6 +15,16 @@ ACalendar::Application.routes.draw do
             collection do
             end
         end
+
+        resources :task_types do
+            collection do
+            end
+        end
+        
+        resources :task_type_attributes do
+            collection do
+            end
+        end
     end
 
     root :to => 'application#index'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831044043) do
+ActiveRecord::Schema.define(:version => 20120908074234) do
 
   create_table "configurations", :force => true do |t|
     t.string   "name"
@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(:version => 20120831044043) do
   create_table "task_type_attributes", :force => true do |t|
     t.integer  "task_type_id"
     t.string   "name"
-    t.text     "value"
+    t.text     "description"
     t.text     "default"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.text     "required"
   end
 
   add_index "task_type_attributes", ["task_type_id"], :name => "index_task_type_attributes_on_task_type_id"

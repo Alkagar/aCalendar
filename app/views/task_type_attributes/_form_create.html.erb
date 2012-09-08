@@ -1,0 +1,18 @@
+<%= form_for @task_type_attribute do |f| %>
+    <div><%= f.error_messages %></div>
+
+    <div><%= f.hidden_field :task_type_id %></div>
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name %></div>
+
+    <div><%= f.label :description %></div>
+    <div><%= f.text_area :description %></div>
+
+    <div><%= f.label :default %></div>
+    <div><%= f.text_area :default %></div>
+
+    <div><%= f.label :required %></div>
+    <div><%= f.check_box :required %></div>
+
+    <div><%= f.submit %></div>
+<% end %>

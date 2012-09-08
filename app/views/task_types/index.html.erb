@@ -1,0 +1,20 @@
+<h2><%= t(:titles_task_types_list) %> </h2>
+<% @task_types.each do |task_type| %>
+    <div>
+        <div>
+            <%= task_type.name %>
+        </div>
+        <div class='font60p'>
+            <%= task_type.description %>
+        </div>
+        <div class='font60p'>
+            <% task_type.task_type_attributes.each do |task_type_attribute| %>
+                <li><%= task_type_attribute.name %> </li>
+            <% end %>
+        </div>
+        <div>
+            <%= link_to t(:task_types_add_attribute), new_task_type_attribute_path(:task_type_id => task_type.id) %>
+        </div>
+    </div>
+    <hr />
+<% end %>

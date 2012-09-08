@@ -17,6 +17,9 @@ class ApplicationController < ActionController::Base
                 cookies[:user_id] = { :value => user.id, :expires => Time.now + 72 * 3600 } if user.autologin
             end
         end
+        unless session[:current_user].nil?
+            @logged_user = session[:current_user]
+        end
     end
 
     def default_url_options(options={})

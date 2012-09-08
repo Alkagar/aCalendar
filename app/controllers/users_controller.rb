@@ -36,6 +36,9 @@ class UsersController < ApplicationController
     end
 
     def logout
+        user = session[:current_user]
+        user.autologin = false;
+        user.save
         cookies.delete :user_id
         session[:current_user] = nil
         redirect_to(root_path)

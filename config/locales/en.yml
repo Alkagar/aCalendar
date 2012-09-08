@@ -5,19 +5,21 @@ en:
     hello: "Hello world"
     menu_home: "home"
     menu_login: 'login'
-    menu_create: 'create'
+    menu_create: 'register'
     menu_help: 'help'
     menu_logout: 'logout'
     menu_en: 'en'
     menu_pl: 'pl'
     menu_task_list: 'tasks'
     menu_task_new: 'new task'
+    menu_task_types: 'types list'
+    menu_task_type_new: 'new type'
 
     titles_task_list: "Task list"
     titles_task_new: "New task"
 
 
-
+    default_value: "default"
 
     general_form_wrong_login: 'Sorry, wrong username or password.'
 
