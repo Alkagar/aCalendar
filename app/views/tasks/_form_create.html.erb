@@ -1,6 +1,13 @@
 <%= form_for @task do |f| %>
     <div><%= f.error_messages %></div>
 
+    <div>
+        <%= label_tag :task_type_id, 'Task type' %>
+    </div>
+    <div>
+        <%= f.select :task_type_id, options_from_collection_for_select(@task_types, "id", "name"), :prompt => t(:form_select_default) %>
+    </div>
+
     <div><%= f.label :name %></div>
     <div><%= f.text_field :name %></div>
 
@@ -12,6 +19,9 @@
 
     <div><%= f.label :description %></div>
     <div><%= f.text_area :description %></div>
+
+    <div class='task_type_fields'>
+    </div>
 
     <div><%= f.submit %></div>
 <% end %>

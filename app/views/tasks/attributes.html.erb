@@ -1,0 +1,8 @@
+<% @task_type_attributes.each do |tta| %>
+    <div>
+        <%= tta.name %>
+    </div>
+    <div>
+        <%= text_field_tag "attributes[attribute_#{tta.id}]" %>
+    </div>
+<% end %>

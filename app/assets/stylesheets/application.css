@@ -41,6 +41,13 @@ body {
     font-size:60%;
 }
 
+select {
+    font-size:16px;
+    font-family:"spinnaker";
+    width: 400px;
+    border:1px solid #000000;
+}
+
 input {
     font-size:16px;
     font-family:"spinnaker";
@@ -57,3 +64,4 @@ textarea {
 a {
     color:#555555;
 }
+

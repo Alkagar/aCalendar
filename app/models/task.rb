@@ -1,10 +1,11 @@
 class Task < ActiveRecord::Base
     belongs_to :user
     belongs_to :task_type
-    attr_accessible :begin, :description, :duration, :end, :name
+    attr_accessible :begin, :description, :duration, :end, :name, :task_type_id
 
     validate :begin_before_end
     validates :name, :presence => true, :length => { :in => 5..400 }
+    validates :task_type_id, :presence => true
 
     def begin_before_end
         unless self.begin.nil? or self.end.nil?

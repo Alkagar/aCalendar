@@ -13,6 +13,7 @@ ACalendar::Application.routes.draw do
         end
         resources :tasks do
             collection do
+                match 'attributes'
             end
         end
 

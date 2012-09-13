@@ -19,6 +19,8 @@ en:
     titles_task_new: "New task"
 
 
+    form_select_default: "select"
+
     default_value: "default"
 
     general_form_wrong_login: 'Sorry, wrong username or password.'
