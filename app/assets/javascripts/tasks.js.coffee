@@ -13,8 +13,11 @@ $(document).ready ->
                 url: '/tasks/attributes/?task_type_id=' + selectValue,
                 success: (html) ->
                     $('.task_type_fields').html(html)
-                    $('.task_type_fields input').each () ->
-                        alert $(this).attr('name')
-                    
+                    post = $('.debug').text().replace(/\=\>/g, ':')
+                    attributes = $.parseJSON(post).attributes
+                    if attributes?
+                        $('.task_type_fields input').each () ->
+                            attributeName = $(this).attr('name').match(/\[.*\]/).shift().replace(/[\[\]]/g, '')
+                            $(this).val(attributes[attributeName])
             )
     $('#task_task_type_id').change()
