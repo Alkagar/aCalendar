@@ -1,10 +1,14 @@
 <h2><%= t(:titles_task_list) %> </h2>
 <% @tasks.each do |task| %>
-    <div>
+    <div class='strong'>
         <%= task.name %>
     </div>
     <div>
         <%= "begin at: #{task.begin}, end at: #{task.end}" %>
+        <% task.task_attributes.each do |attribute| %>
+            <div><%= "#{attribute.task_type_attribute.name}: #{attribute.value}" %></div>
+        <% end %>
+
     </div>
     <hr />
 <% end %>

@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
     belongs_to :user
     belongs_to :task_type
+    has_many :task_attributes
     attr_accessible :begin, :description, :duration, :end, :name, :task_type_id
 
     validate :begin_before_end
