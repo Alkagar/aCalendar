@@ -14,8 +14,20 @@ class TasksController < ApplicationController
         if @task.valid?
             @task.user_id = @logged_user.id
             @task.duration = @task.compute_duration
-            flash[:notice] = t(:general_flash_status_ok)
-            redirect_to(tasks_path) if @task.save
+            if @task.save
+                flash[:notice] = t(:general_flash_status_ok)
+                logger.warn params
+                Array(params[:attributes]).each do |name, value|
+                    taskAttribute = TaskAttribute.new
+                    taskAttribute.value = value
+                    taskAttribute.task_id = @task.id
+                    taskAttribute.task_type_attribute_id = name.split('_').last
+                    unless taskAttribute.save
+                        logger.info 'nie udalo sie'
+                    end
+                end
+                redirect_to(tasks_path)
+            end
         end
     end 
 
